@@ -67,21 +67,99 @@ void setup() {
   delay(1000);
 }
 
+void trick() {
+  digitalWrite(MFL, LOW);
+  digitalWrite(MFR, LOW);
+  digitalWrite(MML, LOW);
+  digitalWrite(MMR, LOW);
+  digitalWrite(MBL, LOW);
+  digitalWrite(MBR, LOW);
+
+  delay(500);
+  
+  digitalWrite(TL, HIGH);
+  digitalWrite(HT, HIGH);
+
+  delay(500);
+
+  digitalWrite(HL, LOW);
+  digitalWrite(HR, LOW);
+
+  delay(250);
+  
+  digitalWrite(HL, HIGH);
+  digitalWrite(HR, HIGH);
+
+  delay(250);
+
+  digitalWrite(HR, LOW);
+
+  delay(250);
+
+  digitalWrite(FL, HIGH);
+
+  delay(250);
+
+  digitalWrite(FR, HIGH);
+
+  delay(250);
+  
+  digitalWrite(ML, HIGH);
+
+  delay(250);
+  
+  digitalWrite(MR, HIGH);
+
+  delay(250);
+  
+  digitalWrite(BL, HIGH);
+
+  delay(250);
+  
+  digitalWrite(BR, HIGH);
+
+  delay(1000);
+
+  digitalWrite(MFL, HIGH);
+  digitalWrite(MFR, HIGH);
+  digitalWrite(MML, HIGH);
+  digitalWrite(MMR, HIGH);
+  digitalWrite(MBL, HIGH);
+  digitalWrite(MBR, HIGH);
+
+  delay(1000);
+
+  digitalWrite(FL, HIGH);
+  digitalWrite(FR, HIGH);
+  digitalWrite(ML, HIGH);
+  digitalWrite(MR, HIGH);
+  digitalWrite(BL, HIGH);
+  digitalWrite(BR, HIGH);
+
+  delay(1000);
+  
+}
+
 void side_drop() {
   digitalWrite(FL, HIGH);
   digitalWrite(ML, HIGH);
   digitalWrite(BL, HIGH);
+  
   delay(750);
+  
   digitalWrite(FR, HIGH);
   digitalWrite(MR, HIGH);
   digitalWrite(BR, HIGH);
   digitalWrite(FL, LOW);
   digitalWrite(ML, LOW);
   digitalWrite(BL, LOW);
+  
   delay(1250);
+  
   digitalWrite(FR, LOW);
   digitalWrite(MR, LOW);
   digitalWrite(BR, LOW);
+  
   delay(1000);
 
 }
@@ -219,4 +297,5 @@ void loop() {
     spd = 250;
   }
   side_drop();
+  trick();
 }
