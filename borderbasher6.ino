@@ -1,3 +1,7 @@
+int a;
+int b;
+int spd=150;
+ 
 #define FL 11  // Front Left
 #define BL 9   // Back Left
 #define ML 10  // Middle Left
@@ -49,23 +53,96 @@ void setup() {
   pinMode(HL, OUTPUT);
   pinMode(TL, OUTPUT);
 
-  digitalWrite(MFL , LOW);
-  digitalWrite(MFR , LOW);
-  digitalWrite(MML , LOW);
-  digitalWrite(MMR , LOW);
-  digitalWrite(MBL , LOW);
-  digitalWrite(MBR , LOW);
-  digitalWrite(FL , LOW);
-  digitalWrite(FR , LOW);
-  digitalWrite(ML , LOW);
-  digitalWrite(MR , LOW);
-  digitalWrite(BL , LOW);
-  digitalWrite(BR , LOW);
+  digitalWrite(MFL, LOW);
+  digitalWrite(MFR, LOW);
+  digitalWrite(MML, LOW);
+  digitalWrite(MMR, LOW);
+  digitalWrite(MBL, LOW);
+  digitalWrite(MBR, LOW);
+  digitalWrite(FL, LOW);
+  digitalWrite(FR, LOW);
+  digitalWrite(ML, LOW);
+  digitalWrite(MR, LOW);
+  digitalWrite(BL, LOW);
+  digitalWrite(BR, LOW);
+  digitalWrite(HT, LOW);
+  digitalWrite(TL, LOW);
+  digitalWrite(HL, LOW);
+  digitalWrite(HR, HIGH);
 
-
+  delay(1000);
 }
 
-void loop() {
+void drop() {
+  digitalWrite(HT, HIGH);
+  digitalWrite(TL, HIGH);
+  
+  delay(300);
+  
+  digitalWrite(BL, HIGH);
+  digitalWrite(BR, HIGH);
+
+  delay(100);
+
+  digitalWrite(ML, HIGH);
+  digitalWrite(MR, HIGH);
+
+  delay(100);
+
+  digitalWrite(FL, HIGH);
+  digitalWrite(FR, HIGH);
+
+  delay(750);
+
+  digitalWrite(BL, LOW);
+  digitalWrite(BR, LOW);
+
+  delay(100);
+
+  digitalWrite(ML, LOW);
+  digitalWrite(MR, LOW);
+
+  delay(100);
+
+  digitalWrite(FL, LOW);
+  digitalWrite(FR, LOW);
+
+  delay(750);
+
+  digitalWrite(HT, LOW);
+  digitalWrite(TL, LOW);
+
+  delay(1000);
+}
+
+void tap_dance(int dly) {
+  digitalWrite(FL, HIGH);
+  delay(dly);
+  digitalWrite(FL, LOW);
+  delay(dly);
+   digitalWrite(ML, HIGH);
+  delay(dly);
+  digitalWrite(ML, LOW);
+  delay(dly);
+  digitalWrite(BL, HIGH);
+  delay(dly);
+  digitalWrite(BL, LOW);
+  delay(dly); 
+  digitalWrite(BR, HIGH);
+  delay(dly);
+  digitalWrite(BR, LOW);
+  delay(dly);
+  digitalWrite(MR, HIGH);
+  delay(dly);
+  digitalWrite(MR, LOW);
+  delay(dly);
+  digitalWrite(FR, HIGH);
+  delay(dly);
+  digitalWrite(FR, LOW);
+  delay(dly);
+}
+
+void walk() {
   digitalWrite(FL, HIGH);
   digitalWrite(MR, HIGH);
   digitalWrite(BL, HIGH);
@@ -76,7 +153,7 @@ void loop() {
   digitalWrite(MMR, LOW);
   digitalWrite(MBL, LOW);
 
-  delay(250);
+  delay(290);
 
   digitalWrite(FL, LOW);
   digitalWrite(MR, LOW);
@@ -94,7 +171,7 @@ void loop() {
   digitalWrite(MML, LOW);
   digitalWrite(MBR, LOW);
 
-  delay(250);
+  delay(290);
 
   digitalWrite(FR, LOW);
   digitalWrite(ML, LOW);
@@ -109,5 +186,21 @@ void loop() {
   digitalWrite(MBL, HIGH);
   digitalWrite(MBR, HIGH);
 
-  delay(270);
+  delay(350);
+}
+
+void loop() {
+  for(a=0;a<=20;a++) {
+    walk();
+  }
+
+  delay(500);
+
+  drop();
+
+  for(b=0;b<=3;b++) {
+    tap_dance(spd);
+    spd=spd-50;
+  }
+  spd=150;
 }
