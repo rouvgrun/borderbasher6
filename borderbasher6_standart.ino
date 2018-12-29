@@ -1,6 +1,7 @@
 int a;
+int b;
 int d;
-int spd;
+int spd = 150;
 
 #define FL 11
 #define BL 9
@@ -325,11 +326,11 @@ void loop() {
 
     drop();
 
-    for (spd = 150; spd <= 25; spd = spd - 25) {
+    for (b = 0; b <= 6; b++) {
       tap_dance(spd);
-      spd = spd - 50;
+      spd = spd - 25;
     }
-    spd = 250;
+    spd = 150;
   }
 
   side_drop();
