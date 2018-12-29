@@ -106,14 +106,14 @@ void trick() {
 
   delay(1000);
 
+  digitalWrite(HT, LOW);
+
+  delay(500);
+  
   digitalWrite(HL, LOW);
   digitalWrite(HR, LOW);
 
   delay(750);
-
-  digitalWrite(HT, LOW);
-
-  delay(500);
   
   digitalWrite(HL, HIGH);
 
