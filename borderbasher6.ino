@@ -75,26 +75,12 @@ void trick() {
   digitalWrite(MBL, LOW);
   digitalWrite(MBR, LOW);
 
-  delay(500);
-  
+  delay(1000);
+
   digitalWrite(TL, HIGH);
   digitalWrite(HT, HIGH);
 
   delay(500);
-
-  digitalWrite(HL, LOW);
-  digitalWrite(HR, LOW);
-
-  delay(250);
-  
-  digitalWrite(HL, HIGH);
-  digitalWrite(HR, HIGH);
-
-  delay(250);
-
-  digitalWrite(HR, LOW);
-
-  delay(250);
 
   digitalWrite(FL, HIGH);
 
@@ -103,20 +89,45 @@ void trick() {
   digitalWrite(FR, HIGH);
 
   delay(250);
-  
+
   digitalWrite(ML, HIGH);
 
   delay(250);
-  
+
   digitalWrite(MR, HIGH);
 
   delay(250);
-  
+
   digitalWrite(BL, HIGH);
 
   delay(250);
-  
+
   digitalWrite(BR, HIGH);
+
+  delay(1000);
+
+  digitalWrite(HL, LOW);
+  digitalWrite(HR, LOW);
+
+  delay(750);
+
+  digitalWrite(HT, LOW);
+
+  delay(500);
+  
+  digitalWrite(HL, HIGH);
+
+  delay(750);
+
+  digitalWrite(HR, HIGH);
+
+  delay(750);
+
+  digitalWrite(HR, LOW);
+
+  delay(750);
+
+  digitalWrite(HT, HIGH);
 
   delay(1000);
 
@@ -129,39 +140,39 @@ void trick() {
 
   delay(1000);
 
-  digitalWrite(FL, HIGH);
-  digitalWrite(FR, HIGH);
-  digitalWrite(ML, HIGH);
-  digitalWrite(MR, HIGH);
-  digitalWrite(BL, HIGH);
-  digitalWrite(BR, HIGH);
+  digitalWrite(FL, LOW);
+  digitalWrite(FR, LOW);
+  digitalWrite(ML, LOW);
+  digitalWrite(MR, LOW);
+  digitalWrite(BL, LOW);
+  digitalWrite(BR, LOW);
   digitalWrite(TL, LOW);
   digitalWrite(HT, LOW);
 
   delay(1000);
-  
+
 }
 
 void side_drop() {
   digitalWrite(FL, HIGH);
   digitalWrite(ML, HIGH);
   digitalWrite(BL, HIGH);
-  
+
   delay(750);
-  
+
   digitalWrite(FR, HIGH);
   digitalWrite(MR, HIGH);
   digitalWrite(BR, HIGH);
   digitalWrite(FL, LOW);
   digitalWrite(ML, LOW);
   digitalWrite(BL, LOW);
-  
+
   delay(1250);
-  
+
   digitalWrite(FR, LOW);
   digitalWrite(MR, LOW);
   digitalWrite(BR, LOW);
-  
+
   delay(1000);
 
 }
@@ -283,7 +294,7 @@ void walk() {
 }
 
 void loop() {
-  for (d = 0; d <= 2; d++) {
+  for (d = 0; d <= 1; d++) {
     for (a = 0; a <= 20; a++) {
       walk();
     }
@@ -298,6 +309,8 @@ void loop() {
     }
     spd = 250;
   }
+
   side_drop();
+
   trick();
 }
