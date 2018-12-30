@@ -59,25 +59,25 @@ void setup() {
   digitalWrite(HL, LOW);
   digitalWrite(HR, HIGH);
 
-  delay(1000);
+  delay(500);
 
   digitalWrite(FL, HIGH);
   digitalWrite(MR, HIGH);
   digitalWrite(BL, HIGH);
 
-  delay(1000);
+  delay(500);
 
   digitalWrite(MFL, HIGH);
   digitalWrite(MMR, HIGH);
   digitalWrite(MBL, HIGH);
 
-  delay(1000);
+  delay(500);
 
   digitalWrite(FL, LOW);
   digitalWrite(MR, LOW);
   digitalWrite(BL, LOW);
 
-  delay(1000);
+  delay(500);
   
 }
 
@@ -93,13 +93,13 @@ void loop() {
   digitalWrite(MML, HIGH);
   digitalWrite(MBR, HIGH);
 
-  delay(390);
+  delay(260);
 
   digitalWrite(FL, LOW);
   digitalWrite(MR, LOW);
   digitalWrite(BL, LOW);
 
-  delay(170);
+  delay(160);
 
   digitalWrite(FR, HIGH);
   digitalWrite(ML, HIGH);
@@ -112,12 +112,12 @@ void loop() {
   digitalWrite(MML, LOW);
   digitalWrite(MBR, LOW);
 
-  delay(390);
+  delay(260);
 
   digitalWrite(FR, LOW);
   digitalWrite(ML, LOW);
   digitalWrite(BR, LOW);
 
-  delay(170);
+  delay(160);
 
 }
