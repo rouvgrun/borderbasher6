@@ -1,7 +1,7 @@
 int a;
 int b;
 int d;
-int spd = 150;
+int spd = 300;
 
 #define FL 11
 #define BL 9
@@ -159,13 +159,13 @@ void side_drop() {
   digitalWrite(ML, LOW);
   digitalWrite(BL, LOW);
 
-  delay(1250);
+  delay(1000);
 
   digitalWrite(FR, LOW);
   digitalWrite(MR, LOW);
   digitalWrite(BR, LOW);
 
-  delay(1000);
+  delay(750);
 
 }
 
@@ -328,9 +328,9 @@ void loop() {
 
     for (b = 0; b <= 6; b++) {
       tap_dance(spd);
-      spd = spd - 25;
+      spd = spd - 50;
     }
-    spd = 150;
+    spd = 300;
   }
 
   side_drop();
